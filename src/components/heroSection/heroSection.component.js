@@ -61,7 +61,7 @@ const HeroSection = () => {
       </HeroContent>
       <HeroImages>
         <StaticImage
-          src="../../images/pexels-kaique-rocha-598917.jpg"
+          src="../pexels-kaique-rocha-598917.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}
@@ -69,7 +69,7 @@ const HeroSection = () => {
           alt="man with camera"
         />
         <StaticImage
-          src="../../images/pexels-cottonbro-3888218.jpg"
+          src="../pexels-cottonbro-3888218.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}
@@ -77,7 +77,7 @@ const HeroSection = () => {
           alt="woman modelling"
         />
         <StaticImage
-          src="../../images/pexels-viresh-studio-1444442.jpg"
+          src="../pexels-viresh-studio-1444442.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}
@@ -85,7 +85,7 @@ const HeroSection = () => {
           alt="henna wedding"
         />
         <StaticImage
-          src="../../images/pexels-pixabay-265722.jpg"
+          src="../pexels-pixabay-265722.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}
