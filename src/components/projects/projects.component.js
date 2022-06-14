@@ -12,7 +12,8 @@ const Projects = ({ data }) => {
 
   const [activeIndex, setActiveIndex] = React.useState(-1)
   const { x, y } = useMousePosition()
-  const arrCount = window.innerWidth <= 480 ? 1 : 2
+  const arrCount =
+    typeof window !== "undefined" && window.innerWidth <= 480 ? 1 : 2
 
   useEffect(() => {
     gsap.from(projectWrapperRef.children[0].children, {
