@@ -21,9 +21,9 @@ const HeroSection = () => {
     const photography = title.nextSibling
     const firstImage = heroRef.children[1].children[0]
     const secondImage = firstImage.nextSibling
-    const thirdImage = secondImage.nextSibling
-    const fourthImage = thirdImage.nextSibling
-    const foot = fourthImage.nextSibling
+    const thirdImage = heroRef.children[1].children[2]
+    const fourthImage = heroRef.children[1].children[3]
+    const footer = heroRef.children[1].children[4]
 
     tl.add()
       .from(title.children, {
@@ -44,7 +44,7 @@ const HeroSection = () => {
         height: "20%",
         autoAlpha: 0,
       })
-      .from(foot.children, {
+      .from(footer, {
         autoAlpha: 0,
         y: "100%",
       })
@@ -61,7 +61,7 @@ const HeroSection = () => {
       </HeroContent>
       <HeroImages>
         <StaticImage
-          src="/pexels-kaique-rocha-598917.jpg"
+          src="../../images/pexels-kaique-rocha-598917.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}
@@ -69,7 +69,7 @@ const HeroSection = () => {
           alt="man with camera"
         />
         <StaticImage
-          src="/pexels-cottonbro-3888218.jpg"
+          src="../../images/pexels-cottonbro-3888218.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}
@@ -77,7 +77,7 @@ const HeroSection = () => {
           alt="woman modelling"
         />
         <StaticImage
-          src="/pexels-viresh-studio-1444442.jpg"
+          src="../../images/pexels-viresh-studio-1444442.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}
@@ -85,7 +85,7 @@ const HeroSection = () => {
           alt="henna wedding"
         />
         <StaticImage
-          src="/pexels-pixabay-265722.jpg"
+          src="../../images/pexels-pixabay-265722.jpg"
           quality={95}
           formats={["auto", "webp", "avif"]}
           style={{ objectFit: "cover" }}

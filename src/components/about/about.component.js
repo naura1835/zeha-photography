@@ -87,7 +87,7 @@ const About = () => {
         </AboutUs>
         <ImageWrapper>
           <StaticImage
-            src="../pexels-kaique-rocha-598917.jpg"
+            src="../../images/pexels-kaique-rocha-598917.jpg"
             quality={95}
             formats={["auto", "webp", "avif"]}
             style={{ objectFit: "cover", height: "100%", width: "100%" }}

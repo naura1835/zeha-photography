@@ -32,21 +32,13 @@ const Contact = () => {
         <Details>+234-99126534</Details>
         <IconWrapper>
           <a href="/">
-            <img src={instagram} />
+            <img src={instagram} alt="instagram icon" />
           </a>
           <a href="/">
-            <img src={twitter} />
+            <img src={twitter} alt="twitter icon" />
           </a>
         </IconWrapper>
       </SocialMedia>
-      {/* <StaticImage
-          src="../../images/group-16.svg"
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-          style={{ objectFit: "cover" }}
-          loading="eager"
-          alt="man with camera"
-        /> */}
     </>
   )
 }

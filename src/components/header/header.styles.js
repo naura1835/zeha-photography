@@ -37,7 +37,7 @@ export const Menu = styled.ul`
   left: 0;
   width: 100%;
   background-color: #d1c4e9;
-  z-index: 2;
+  z-index: 3;
   @media (max-width: 480px) {
     padding-top: 20%;
   }

@@ -82,7 +82,7 @@ const ProjectDetails = ({ data }) => {
         "s"
       )
     })
-  }, [])
+  })
 
   const addToRefs = el => {
     if (el && !imgRevealRef.current.includes[el]) {

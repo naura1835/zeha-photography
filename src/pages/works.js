@@ -5,14 +5,15 @@ import Seo from "../components/seo"
 
 import GlobalStyle from "../globalStyles/globalStyles"
 import Projects from "../components/projects/projects.component"
+import Layout from "../components/layout"
 
 const ProjectsPage = ({ data }) => {
   return (
-    <>
+    <Layout>
       <GlobalStyle theme="purple" />
       <Seo title="Project Page" />
       <Projects data={data} />
-    </>
+    </Layout>
   )
 }
 

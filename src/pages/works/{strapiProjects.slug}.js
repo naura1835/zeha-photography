@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import ProjectDetails from "../../components/projectDetails/projectDetails.component"
 import GlobalStyle from "../../globalStyles/globalStyles"
+import Layout from "../../components/layout"
 
 const ProjectDetail = ({ data }) => {
   const [whiteBg, isWhiteBg] = useState(false)
@@ -10,10 +11,10 @@ const ProjectDetail = ({ data }) => {
     isWhiteBg(true)
   }, [])
   return (
-    <>
+    <Layout>
       <GlobalStyle theme="white" />
       <ProjectDetails data={data} whiteBg={whiteBg} />
-    </>
+    </Layout>
   )
 }
 

@@ -5,10 +5,11 @@ import { Link } from "gatsby"
 import Seo from "../components/seo"
 import GlobalStyle from "../globalStyles/globalStyles"
 import { BodyMainText, TitleDisplay } from "../globalStyles/textStyles"
+import Layout from "../components/layout"
 
 function NotFoundPage() {
   return (
-    <>
+    <Layout>
       <GlobalStyle theme="purple" />
       <Seo title="404: Not found" />
       <Wrapper>
@@ -20,7 +21,7 @@ function NotFoundPage() {
           <Caption>Let's head home.</Caption>
         </Link>
       </Wrapper>
-    </>
+    </Layout>
   )
 }
 

@@ -56,7 +56,7 @@ const Projects = ({ data }) => {
                 return (
                   <ProjectImage
                     key={index}
-                    url={img.localFile.childImageSharp}
+                    url={img.localFile.publicURL}
                     active={isActive}
                     id={index}
                     x={xPos}

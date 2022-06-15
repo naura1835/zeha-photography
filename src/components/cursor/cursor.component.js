@@ -1,15 +1,14 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef } from "react"
 import gsap from "gsap"
 
 import { Wrapper } from "./cursor.styles"
 
 const Cursor = () => {
   let mouseRef = useRef(null)
-  let navLinks = useRef([])
 
   useEffect(() => {
+    let navLinks
     navLinks = document.querySelectorAll("a, button, img, Link")
-    console.log(navLinks)
     window.addEventListener("mouseout", () => {
       gsap.set(".cursor", {
         autoAlpha: 0,
