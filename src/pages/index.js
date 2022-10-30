@@ -1,5 +1,4 @@
-import React, { useEffect } from "react"
-// import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
 
 import Seo from "../components/seo"
 
@@ -8,9 +7,6 @@ import HeroSection from "../components/heroSection/heroSection.component"
 import Layout from "../components/layout"
 
 const IndexPage = () => {
-  useEffect(() => {
-    return () => {}
-  })
   return (
     <Layout>
       <GlobalStyle theme="purple" />

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import gsap from "gsap"
+import gsap, { Power0 } from "gsap"
 
 import {
   FooterWrapper,
@@ -14,9 +14,8 @@ import {
 const HeroSection = () => {
   let heroRef = useRef(null)
   const title = ["Z", "E", "H", "A"]
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 2.0 })
 
+  useEffect(() => {
     const title = heroRef.children[0].children[0]
     const photography = title.nextSibling
     const firstImage = heroRef.children[1].children[0]
@@ -24,6 +23,15 @@ const HeroSection = () => {
     const thirdImage = heroRef.children[1].children[2]
     const fourthImage = heroRef.children[1].children[3]
     const footer = heroRef.children[1].children[4]
+
+    const tl = gsap.timeline({
+      delay: 2.0,
+    })
+
+    gsap.set([firstImage, secondImage, thirdImage, fourthImage], {
+      position: "absolute",
+      autoAlpha: 0,
+    })
 
     tl.add()
       .from(title.children, {
@@ -38,11 +46,45 @@ const HeroSection = () => {
         autoAlpha: 0,
       })
       .from([firstImage, secondImage, thirdImage, fourthImage], {
-        left: "40%",
+        position: "absolute",
+      })
+      .to(
+        [firstImage, secondImage, thirdImage, fourthImage],
+        {
+          autoAlpha: 1,
+        },
+        "s"
+      )
+      .to(
+        secondImage,
+        {
+          rotate: "15deg",
+          ease: Power0.easeInOut,
+        },
+        "s"
+      )
+      .to(
+        thirdImage,
+        {
+          rotate: "10deg",
+          ease: Power0.easeInOut,
+        },
+        "s"
+      )
+      .to(
+        firstImage,
+        {
+          rotate: "-15deg",
+          ease: Power0.easeInOut,
+        },
+        "s"
+      )
+      .from([firstImage, secondImage, thirdImage, fourthImage], {
+        left: "50%",
         top: "50%",
-        width: "20%",
-        height: "20%",
-        autoAlpha: 0,
+        y: "-50%",
+        x: "-50%",
+        zIndex: 2,
       })
       .from(footer, {
         autoAlpha: 0,

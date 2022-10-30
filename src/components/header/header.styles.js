@@ -5,7 +5,8 @@ export const HeaderWrapper = styled.div`
   height: 10vh;
   width: 100%;
   padding: 2vh 4vw;
-  position: relative;
+  position: fixed;
+  z-index: 2;
 `
 export const MenuWrapper = styled.div`
   height: 100%;
@@ -26,8 +27,9 @@ export const Logo = styled(SmallMediumText).attrs(props => ({
     font-weight: bold;
     text-decoration: none;
 
-  &.active {
-    color: #000000;
+    &.active {
+      color: #000000;
+    }
   }
 `
 export const Menu = styled.ul`
