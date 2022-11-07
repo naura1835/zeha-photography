@@ -69,26 +69,37 @@ export const ImageWrapper = styled.div`
   }
 
   > div:nth-child(even) {
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
     align-self: center;
   }
 
   > div:nth-child(odd) {
-    height: 400px;
-    width: 300px;
+    max-height: 400px;
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+
     justify-self: start;
   }
 
   > div:nth-child(6n) {
-    width: 300px;
-    height: 400px;
+    max-width: 300px;
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+
     justify-self: end;
     /* grid-column: 2/3; */
   }
   > div:nth-child(6n + 1) {
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+
     align-self: end;
     justify-self: start;
     grid-column: 2/4;
@@ -104,8 +115,11 @@ export const ImageWrapper = styled.div`
   } */
 
   > div:nth-child(1) {
-    width: 300px;
-    height: 400px;
+    max-width: 300px;
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+
     grid-column: 2/3;
     align-self: end;
     justify-self: end;
@@ -123,30 +137,30 @@ export const ImageWrapper = styled.div`
 
   @media (max-width: 1024px) {
     column-gap: 5vw;
-    row-gap: 5vh;
+    row-gap: 100px;
     padding: 0 5vw;
+    grid-template-columns: repeat(2, 1fr);
 
-    /* > div:nth-child(even) {
-      width: 100%;
+    > div:nth-child(6n + 1),
+    div:nth-child(1) {
+      grid-column: unset;
+    }
+
+    > div:nth-child(even) {
+      justify-self: center;
+      align-self: start;
     }
     > div:nth-child(odd) {
-      width: 60%;
+      justify-self: end;
     }
-    > div:nth-child(1) {
-      width: 80%;
-      height: 60vh;
-      align-self: start;
-    } */
+    > div:nth-child(6n) {
+      justify-self: start;
+      max-height: 400px;
+      margin-top: 8vh;
+    }
   }
 
   @media (max-width: 768px) {
-    > div:nth-child(1) {
-      grid-column: 1/4;
-      justify-self: center;
-    }
-  }
-
-  @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,6 +175,9 @@ export const ImageWrapper = styled.div`
     }
     > div:nth-child(odd) {
       align-self: flex-start;
+    }
+    > div:nth-child(6n + 1) {
+      margin-top: 0;
     }
     > div:nth-child(3n) {
       align-self: flex-end;
