@@ -21,9 +21,13 @@ export const Title = styled(TitleDisplay)`
   display: inline-block;
   height: auto;
   overflow: hidden;
+
   > span {
     overflow: hidden;
     display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
   }
 `
 export const FooterWrapper = styled.footer`

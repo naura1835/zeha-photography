@@ -32,9 +32,9 @@ const HeroSection = () => {
     const tl = gsap.timeline()
 
     tl.add()
-      .from(title.children, {
-        y: "100%",
-        autoAlpha: 0,
+      .to(title.children, {
+        y: "0%",
+        autoAlpha: 1,
         stagger: {
           each: 0.2,
         },
@@ -43,9 +43,9 @@ const HeroSection = () => {
         y: "100%",
         autoAlpha: 0,
       })
-      .from([firstImage, secondImage, thirdImage, fourthImage], {
-        position: "absolute",
-      })
+      // .from([firstImage, secondImage, thirdImage, fourthImage], {
+      //   position: "absolute",
+      // })
       .to(
         [firstImage, secondImage, thirdImage, fourthImage],
         {
@@ -58,6 +58,7 @@ const HeroSection = () => {
         {
           rotate: "15deg",
           ease: Power0.easeInOut,
+          duration: 1,
         },
         "s"
       )
