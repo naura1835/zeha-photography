@@ -8,7 +8,6 @@ import useMousePosition from "../../hooks/useMouse"
 import { ProjectList, ProjectMedia, Wrapper } from "./projects.styles"
 
 const Projects = ({ data }) => {
-  console.log(data)
   let projectWrapperRef = useRef(null)
 
   const [activeIndex, setActiveIndex] = React.useState(-1)

@@ -46,7 +46,9 @@ export const HeroImages = styled.div`
   position: relative;
 
   > div {
-    position: relative;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
     width: 250px;
     height: 250px;
   }

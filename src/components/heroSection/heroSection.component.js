@@ -24,14 +24,12 @@ const HeroSection = () => {
     const fourthImage = heroRef.children[1].children[3]
     const footer = heroRef.children[1].children[4]
 
-    gsap.set([firstImage, secondImage, thirdImage, fourthImage], {
-      position: "absolute",
-      autoAlpha: 0,
-    })
+    // gsap.set([firstImage, secondImage, thirdImage, fourthImage], {
+    //   position: "absolute",
+    //   autoAlpha: 0,
+    // })
 
-    const tl = gsap.timeline({
-      delay: 2.0,
-    })
+    const tl = gsap.timeline()
 
     tl.add()
       .from(title.children, {

@@ -1,9 +1,5 @@
 import styled from "styled-components"
-import {
-  CaptionText,
-  Display,
-  TitleDisplay,
-} from "../../globalStyles/textStyles"
+import { CaptionText, TitleDisplay } from "../../globalStyles/textStyles"
 
 export const Wrapper = styled.div`
   display: grid;
@@ -20,10 +16,8 @@ export const ProjectInfoWrapper = styled.div`
   padding: 2vh 4vw;
   overflow: hidden;
 
-  @media (max-width: 480px) {
-    //   bottom: 50%;
-    //   left: 0;
-    //   transform: translate(15%, 50%);
+  @media (max-width: 900px) {
+    height: calc(50vh);
   }
 `
 export const DateInfo = styled(CaptionText)`
@@ -105,14 +99,6 @@ export const ImageWrapper = styled.div`
     grid-column: 2/4;
     margin-top: 15rem;
   }
-  /*
-  > div:nth-child(9n) {
-    height: 60vh;
-    width: 60vw;
-    grid-column: 1/4;
-    align-self: center;
-    justify-self: center;
-  } */
 
   > div:nth-child(1) {
     max-width: 300px;
