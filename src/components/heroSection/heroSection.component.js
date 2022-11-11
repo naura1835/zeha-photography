@@ -39,9 +39,9 @@ const HeroSection = () => {
           each: 0.2,
         },
       })
-      .from(photography, {
-        y: "100%",
-        autoAlpha: 0,
+      .to(photography, {
+        y: "0%",
+        autoAlpha: 1,
       })
       // .from([firstImage, secondImage, thirdImage, fourthImage], {
       //   position: "absolute",

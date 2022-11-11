@@ -29,6 +29,12 @@ export const Title = styled(TitleDisplay)`
     visibility: hidden;
     transform: translateY(100%);
   }
+
+  &:last-child {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+  }
 `
 export const FooterWrapper = styled.footer`
   position: absolute;
