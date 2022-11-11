@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Zeha Photography`,
@@ -36,11 +40,10 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.DEPLOY_URL
-          ? `https://zeha-backend.herokuapp.com`
-          : `http://localhost:1337`,
-        queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`projects`],
+        apiURL: process.env.STRAPI_API_URL || `http://localhost:1337`,
+        //   // process.env.DEPLOY_URL
+        accessToken: process.env.STRAPI_TOKEN,
+        collectionTypes: [`project`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

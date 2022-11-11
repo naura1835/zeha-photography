@@ -62,17 +62,17 @@ const ProjectDetails = ({ data }) => {
     <div ref={el => (projectRef = el)}>
       <Wrapper>
         <ProjectInfoWrapper>
-          <DateInfo>{data.strapiProjects.project_date}</DateInfo>
-          <ProjectName>{data.strapiProjects.project_title}</ProjectName>
+          <DateInfo>{data.strapiProject.project_date}</DateInfo>
+          <ProjectName>{data.strapiProject.project_title}</ProjectName>
         </ProjectInfoWrapper>
         <ImageWrapper>
-          {data.strapiProjects.image.map((img, index) => {
-            if (img.localFile.childImageSharp !== null) {
+          {data.strapiProject.image.map((img, index) => {
+            if (img.localFile?.childImageSharp !== null) {
               return (
                 <div key={index} ref={addToRefs}>
                   <GatsbyImage
-                    image={img.localFile.childImageSharp.gatsbyImageData}
-                    alt={data.strapiProjects.project_title}
+                    image={img.localFile?.childImageSharp.gatsbyImageData}
+                    alt={data.strapiProject.project_title}
                     style={{
                       objectFit: "cover",
                       height: "100%",
@@ -82,84 +82,16 @@ const ProjectDetails = ({ data }) => {
                 </div>
               )
             }
-            return (
-              <VideoWrapper key={index}>
-                <video
-                  // width="800"
-                  // height="400"
-                  controls
-                  style={{ objectFit: "cover" }}
-                >
-                  <source src={img.localFile.publicURL} type="video/mp4" />
-                </video>
-              </VideoWrapper>
-            )
+            {
+              return (
+                <VideoWrapper key={index}>
+                  <video controls style={{ objectFit: "cover" }}>
+                    <source src={img.localFile?.publicURL} type="video/mp4" />
+                  </video>
+                </VideoWrapper>
+              )
+            }
           })}
-          <div ref={addToRefs}>
-            <GatsbyImage
-              image={
-                data.strapiProjects.image[0].localFile.childImageSharp
-                  .gatsbyImageData
-              }
-              style={{
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          </div>
-          <div ref={addToRefs}>
-            <GatsbyImage
-              image={
-                data.strapiProjects.image[0].localFile.childImageSharp
-                  .gatsbyImageData
-              }
-              style={{
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          </div>
-          <div ref={addToRefs}>
-            <GatsbyImage
-              image={
-                data.strapiProjects.image[0].localFile.childImageSharp
-                  .gatsbyImageData
-              }
-              style={{
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          </div>
-          <div ref={addToRefs}>
-            <GatsbyImage
-              image={
-                data.strapiProjects.image[0].localFile.childImageSharp
-                  .gatsbyImageData
-              }
-              style={{
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          </div>
-          <div ref={addToRefs}>
-            <GatsbyImage
-              image={
-                data.strapiProjects.image[0].localFile.childImageSharp
-                  .gatsbyImageData
-              }
-              style={{
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          </div>
         </ImageWrapper>
       </Wrapper>
     </div>

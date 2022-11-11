@@ -22,9 +22,9 @@ export default ProjectDetail
 
 export const query = graphql`
   query ($id: String!) {
-    strapiProjects(id: { eq: $id }) {
+    strapiProject(id: { eq: $id }) {
       id
-      strapiId
+      strapi_id
       project_title
       slug
       category

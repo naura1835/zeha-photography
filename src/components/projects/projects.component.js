@@ -8,6 +8,7 @@ import useMousePosition from "../../hooks/useMouse"
 import { ProjectList, ProjectMedia, Wrapper } from "./projects.styles"
 
 const Projects = ({ data }) => {
+  console.log(data)
   let projectWrapperRef = useRef(null)
 
   const [activeIndex, setActiveIndex] = React.useState(-1)
@@ -30,13 +31,13 @@ const Projects = ({ data }) => {
   return (
     <Wrapper ref={el => (projectWrapperRef = el)}>
       <ProjectList>
-        {data.allStrapiProjects.nodes
-          .sort((a, b) => a.strapiId - b.strapiId)
-          .map(({ category, project_title, slug, strapiId }, index) => (
+        {data.allStrapiProject.nodes
+          .sort((a, b) => a.strapi_id - b.strapi_id)
+          .map(({ category, project_title, slug, strapi_id }, index) => (
             <ProjectTitle
               title={project_title}
               category={category}
-              key={strapiId}
+              key={strapi_id}
               setActiveIndex={setActiveIndex}
               slug={slug}
               index={index}
@@ -44,19 +45,19 @@ const Projects = ({ data }) => {
           ))}
       </ProjectList>
       <ProjectMedia>
-        {data.allStrapiProjects.nodes.map(project =>
+        {data.allStrapiProject.nodes.map(project =>
           project.image
             .filter((img, id) => id < arrCount)
             .map((img, index) => {
-              const isActive = project.strapiId - 1 === activeIndex
+              const isActive = project.strapi_id - 1 === activeIndex
               const xPos = isActive && window.innerWidth <= 480 ? x : 0
               const yPos = isActive && window.innerWidth <= 480 ? y : 0
 
-              if (img.localFile.childImageSharp !== null) {
+              if (img.localFile?.childImageSharp !== null) {
                 return (
                   <ProjectImage
                     key={index}
-                    url={img.localFile.publicURL}
+                    url={img.localFile?.publicURL}
                     active={isActive}
                     id={index}
                     x={xPos}

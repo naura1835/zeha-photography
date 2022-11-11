@@ -21,9 +21,9 @@ export default ProjectsPage
 
 export const query = graphql`
   query MyQuery {
-    allStrapiProjects {
+    allStrapiProject {
       nodes {
-        strapiId
+        strapi_id
         project_title
         slug
         category
