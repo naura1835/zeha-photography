@@ -17,7 +17,7 @@ export default function ProjectImage({ id, active, url, x, y }) {
       height={height}
     >
       <GatsbyImage
-        image={getImage(url)}
+        image={url}
         alt=""
         style={{
           height: "100%",
